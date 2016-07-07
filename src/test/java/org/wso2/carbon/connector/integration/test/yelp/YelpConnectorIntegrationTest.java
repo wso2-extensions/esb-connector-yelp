@@ -46,7 +46,7 @@ public class YelpConnectorIntegrationTest extends ConnectorIntegrationTestBase {
      */
     @BeforeClass(alwaysRun = true)
     public void setEnvironment() throws Exception {
-        init("yelp-connector-1.0.1-SNAPSHOT");
+        init("yelp-connector-1.0.1");
         esbRequestHeadersMap.put("Accept-Charset", "UTF-8");
         esbRequestHeadersMap.put("Content-Type", "application/json");
     }
@@ -1979,7 +1979,7 @@ public class YelpConnectorIntegrationTest extends ConnectorIntegrationTestBase {
     public void testYelpBusinessWithMandatoryParametersNegativeCase() throws Exception {
         esbRequestHeadersMap.put("Action", "urn:business");
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap,
-                "business/business_negative.txt");
+                "business/business_mandatory.txt");
         String apiEndPoint = connectorProperties.getProperty("apiUrl") + "business/" + connectorProperties.getProperty("id");
         String parameters = "oauth_consumer_key=" + connectorProperties.getProperty("invalidConsumerKey") +
                 "&oauth_nonce=dummynonce" +
@@ -1991,8 +1991,7 @@ public class YelpConnectorIntegrationTest extends ConnectorIntegrationTestBase {
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiUrl, httpMethod, apiRequestHeadersMap);
 
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("region").toString(),
-                apiRestResponse.getBody().getJSONObject("region").toString());
+        Assert.assertEquals(apiRestResponse.getBody().getJSONObject("error").getString("id"),"INVALID_OAUTH_CREDENTIALS");
     }
 
 
