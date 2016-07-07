@@ -10,11 +10,11 @@ Pre-requisites:
 Tested Platform: 
 
  - UBUNTU 13.04
- - WSO2 ESB 4.8.1
+ - WSO2 ESB 4.9.0, 5.0.0-BETA
 
 STEPS:
 
-1. Make sure the ESB 4.9.0 zip available at "{<CONNECTORS_HOME>/repository/"
+1. Make sure the ESB  5.0.0-BETA zip available at "{<CONNECTORS_HOME>/repository/ and and add "-XX:-UseSplitVerifier" under $JVM_MEM_OPTS into {ESB_HOME}/bin/wso2server.sh".
 
 2. Create a Yelp account and get the api access keys:
 	i) 	Using the URL "http://www.yelp.com/SignUp" create a yelp account.
