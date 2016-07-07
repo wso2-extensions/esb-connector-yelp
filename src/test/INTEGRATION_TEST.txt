@@ -9,7 +9,7 @@ Pre-requisites:
 
 Tested Platform: 
 
- - UBUNTU 13.04
+ - UBUNTU 13.04, 14.04
  - WSO2 ESB 4.9.0, 5.0.0-BETA
 
 STEPS:
@@ -23,7 +23,7 @@ STEPS:
 
 3. Update the Yelp properties file at location "{Connector_Home}/src/test/resources/artifacts/ESB/connector/config" as below.
    
-		i)   consumerKey - Use the consumerKey you got from step 8.
+         i)   consumerKey - Use the consumerKey you got from step 8.
         ii)  consumerKeySecret - Use the consumerKeySecret you got from step 8.
         iii) accessToken - Use the accessToken you got from step 8.
         iv)  accessTokenSecret - Use the accessTokenSecret you got from step 8.
