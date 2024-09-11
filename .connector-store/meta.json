@@ -4,7 +4,7 @@
     "category": "Social Media",
     "documentationUrl": "https://docs.wso2.com/display/ESBCONNECTORS/Yelp+Connector",
     "description": "The Yelp connector allows you to access the Yelp REST API through WSO2 ESB. Yelp is an online urban city guide that helps people to find cool places to eat, shop, drink, relax and play, based on the informed opinions of a vibrant and active community of locals in the know. Yelp is the fun and easy way to find, review and talk about what's great and not so great in your world.",
-    "status": "Active",
+    "status": "Inactive",
     "labels": [
         "connector"
     ],
